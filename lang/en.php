@@ -68,4 +68,6 @@ $_SESSION['lg_padding']="Padding";
 $_SESSION['lg_upload_picture']="Load image";
 $_SESSION['lg_choose_file_from_disk']="Choose file from disk";
 
+$_SESSION['changes_saved']="Changes saved";
+
 ?>

@@ -67,4 +67,6 @@ $_SESSION['lg_border_radius']="Promień obramowania";
 $_SESSION['lg_padding']="Odstęp";
 $_SESSION['lg_upload_picture']="Załaduj obraz";
 $_SESSION['lg_choose_file_from_disk']="Wybierz plik z dysku";
+
+$_SESSION['changes_saved']="Zapisano zmiany";
 ?>
