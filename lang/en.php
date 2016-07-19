@@ -68,6 +68,13 @@ $_SESSION['lg_padding']="Padding";
 $_SESSION['lg_upload_picture']="Load image";
 $_SESSION['lg_choose_file_from_disk']="Choose file from disk";
 
-$_SESSION['changes_saved']="Changes saved";
+$_SESSION['lg_changes_saved']="Changes saved";
+$_SESSION['lg_hide']="Hide";
+$_SESSION['lg_show']="Show";
+
+$_SESSION['lg_page_is_now_visible']="Page is now visible on the menu";
+$_SESSION['lg_page_is_now_invisible']="Page is now invisible on the menu";
+
+
 
 ?>

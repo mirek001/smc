@@ -203,6 +203,8 @@ $lang_add_section_gallery=$_SESSION['lg_add_section_gallery'];
 $lang_add_section=$_SESSION['lg_add_section'];
 $confirm=$_SESSION['lg_confirm'];
 $remove_page=$_SESSION['lg_remove_page'];
+$lang_hide=$_SESSION['lg_hide'];
+$hide_unhide=unhide_page($id);
 
 return<<<END
 <div class="dropdown">
@@ -221,6 +223,7 @@ return<<<END
       <li><a href="system/core/move_up_down.php?id=$id&action=move_up">$lang_move_up</a></li>
       <li><a href="system/core/move_up_down.php?id=$id&action=move_down">$lang_move_down</a></li>
       <li role="separator" class="divider"></li>
+      <li>$hide_unhide</li>
       <li><a href="#" data-toggle="modal" data-target="#remove-$id">$lang_delete</a></li>
 </ul>
 </div>
@@ -336,7 +339,7 @@ END;
 }
 
 
-function dropdown_action_header_footer($name){
+function dropdown_action_header_footer($name){   //<<< rozwijane menu headera
 $lang_edit=$_SESSION['lg_edit'];
 $lang_disable=$_SESSION['lg_disable'];
 
@@ -346,27 +349,37 @@ return<<<END
   </button>
   <ul class="dropdown-menu" aria-labelledby="dLabel-$name">
         <li><a href="system.php?page=edit_headers&name=$name">$lang_edit</a></li>
-        <li><a href="system/core/enable_disable_header.php?hidden=1&type=$name">$lang_disable</a></li>
+        <li><a href="system/core/enable_disable_header.php?disabled=1&type=$name">$lang_disable</a></li>
   </ul>
 </div>
 END;
 }
 
 
-function enable_headers($name){   // <<<<<<<<<<<<<<<<jeżeli header albo footer wyłączony pojawia się zielony przycisk włącz
+function enable_headers($name, $id){   // <<<<<<<<<<<<<<<<jeżeli header albo footer wyłączony pojawia się zielony przycisk włącz
 $lang_enable=$_SESSION['lg_enable'];
 $con = mysqli_connect($_SESSION['HOST'],$_SESSION['LOGIN'],$_SESSION['PASSWD'],$_SESSION['DB']);
 $res = $con->query($q=("SELECT *  FROM site_map WHERE type='$name'"));
 $row = mysqli_fetch_array($res);
+$disabled = $row['disabled'];
+
+if ($disabled==1) {
+      return "<a class=\"btn btn-success btn-xs\" href=\"system/core/enable_disable_header.php?disabled=0&type=$name\" role=\"button\">$lang_enable</a>";
+}
+else return '';
+}
+
+function unhide_page($id){   // <<<<<<<<<<<<<<<<jeżeli header albo footer wyłączony pojawia się zielony przycisk włącz
+$lang_enable=$_SESSION['lg_show'];
+$con = mysqli_connect($_SESSION['HOST'],$_SESSION['LOGIN'],$_SESSION['PASSWD'],$_SESSION['DB']);
+$res = $con->query($q=("SELECT *  FROM site_map WHERE id='$id'"));
+$row = mysqli_fetch_array($res);
 $hidden = $row['hidden'];
 
-
-
 if ($hidden==1) {
-      return "<a class=\"btn btn-success btn-xs\" href=\"system/core/enable_disable_header.php?hidden=0&type=$name\" role=\"button\">$lang_enable</a>";
+      return '<a href="system/core/hide_unhide_page.php?hidden=0&id='.$id.'">'.$_SESSION['lg_show'].'</a>';;
 }
-else return "";
-
+else return '<a href="system/core/hide_unhide_page.php?hidden=1&id='.$id.'">'.$_SESSION['lg_hide'].'</a>';
 }
 
 

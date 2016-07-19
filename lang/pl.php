@@ -68,5 +68,11 @@ $_SESSION['lg_padding']="Odstęp";
 $_SESSION['lg_upload_picture']="Załaduj obraz";
 $_SESSION['lg_choose_file_from_disk']="Wybierz plik z dysku";
 
-$_SESSION['changes_saved']="Zapisano zmiany";
+$_SESSION['lg_changes_saved']="Zapisano zmiany";
+$_SESSION['lg_hide']="Ukryj";
+$_SESSION['lg_show']="Pokaż";
+
+$_SESSION['lg_page_is_now_visible']="Strona jest teraz widoczna w menu";
+$_SESSION['lg_page_is_now_invisible']="Strona jest teraz niewidoczna w menu";
+
 ?>
