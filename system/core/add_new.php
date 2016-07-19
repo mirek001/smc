@@ -19,7 +19,7 @@ $res = $con->query("SELECT * FROM site_map  WHERE id=$id");
 if ($action=="new_section_html"){
 	$page="page";
 	$con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD'], $_SESSION['DB']);
-	$con->query($q=("INSERT INTO site_map (id, name, cat_id, position, type, section_type, hidden, create_time) VALUES (NULL, 'HTML Section', '$id', 9999, 'section', 'html', 0, NULL)"));
+	$con->query($q=("INSERT INTO site_map (id, name, cat_id, position, type, section_type, hidden, create_time) VALUES (NULL, 'WYSIWYG Section', '$id', 9999, 'section', 'html', 0, NULL)"));
 
 
 	//echo $q;

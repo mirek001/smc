@@ -75,4 +75,8 @@ $_SESSION['lg_show']="Pokaż";
 $_SESSION['lg_page_is_now_visible']="Strona jest teraz widoczna w menu";
 $_SESSION['lg_page_is_now_invisible']="Strona jest teraz niewidoczna w menu";
 
+$_SESSION['lg_show_url']="Pokaż link do strony";
+$_SESSION['lg_page_url']="Link do strony";
+$_SESSION['lg_website_address']="Adres strony (np.: http://sitemapcms.com)"
+
 ?>

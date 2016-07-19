@@ -75,6 +75,8 @@ $_SESSION['lg_show']="Show";
 $_SESSION['lg_page_is_now_visible']="Page is now visible on the menu";
 $_SESSION['lg_page_is_now_invisible']="Page is now invisible on the menu";
 
-
+$_SESSION['lg_show_url']="Show page URL";
+$_SESSION['lg_page_url']="Page URL";
+$_SESSION['lg_website_address']="Website URL (for example: http://sitemapcms.com)"
 
 ?>

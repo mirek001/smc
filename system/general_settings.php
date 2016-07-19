@@ -7,6 +7,11 @@ $meta_title = $row['value'];
 $res = $con->query($q=("SELECT *  FROM settings WHERE name='meta_description'"));
 $row = mysqli_fetch_array($res);
 $meta_description = $row['value'];
+$res = $con->query($q=("SELECT *  FROM settings WHERE name='website_address'"));
+$row = mysqli_fetch_array($res);
+$website_address = $row['value'];
+
+
 
 make_thumb("images/favicon-src.jpg", "images/favicon.jpg", '32');
 
@@ -47,9 +52,20 @@ END;
 ?>
 
 <?php
-$lang_website_title=$_SESSION['lg_website_title'];
+$lang_website_address=$_SESSION['lg_website_address'];
 echo<<<END
 <form action="system/core/change_meta_tags.php" method="GET">
+<div class="form-group ">
+$lang_website_address: 
+  <textarea class="form-control col-sm-4" name="website_address" rows="1">$website_address </textarea>
+</div>
+END;
+?>
+
+
+<?php
+$lang_website_title=$_SESSION['lg_website_title'];
+echo<<<END
 <div class="form-group">
 $lang_website_title: 
   <textarea class="form-control" name="meta_title" rows="1">$meta_title</textarea>

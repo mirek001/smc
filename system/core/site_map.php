@@ -204,7 +204,10 @@ $lang_add_section=$_SESSION['lg_add_section'];
 $confirm=$_SESSION['lg_confirm'];
 $remove_page=$_SESSION['lg_remove_page'];
 $lang_hide=$_SESSION['lg_hide'];
+$lang_show_url=$_SESSION['lg_show_url'];
+$lang_page_url=$_SESSION['lg_page_url'];
 $hide_unhide=unhide_page($id);
+$website_address=$_SESSION['website_address'];
 
 return<<<END
 <div class="dropdown">
@@ -219,6 +222,7 @@ return<<<END
                   </ul>
             </li>
       <li><a href="system.php?edit=$id#section-$id">$lang_rename</a></li>
+      <li><a href="#" data-toggle="modal" data-target="#url-$id">$lang_show_url</a></li>
       <li role="separator" class="divider"></li>
       <li><a href="system/core/move_up_down.php?id=$id&action=move_up">$lang_move_up</a></li>
       <li><a href="system/core/move_up_down.php?id=$id&action=move_down">$lang_move_down</a></li>
@@ -244,7 +248,22 @@ return<<<END
     </div>
   </div>
 </div>
-
+<!-- Modal REMOVE END-->
+<!-- Modal URL -->
+<div class="modal fade" id="url-$id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">$lang_page_url:</h4>
+      </div>
+      <div class="modal-body">
+        $website_address/index.php?id=$id
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal URL END-->
 END;
 
 }
