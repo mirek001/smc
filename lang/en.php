@@ -55,4 +55,17 @@ $_SESSION['lg_update_to_version']="Update to version";
 $_SESSION['lg_up_to_date']="Your version is up to date";
 $_SESSION['lg_website_description']="Website description";
 $_SESSION['lg_website_title']="Website title";
+
+$_SESSION['lg_select_color_from_adobe']="Choose color from Adobe Colors";
+$_SESSION['lg_type_page_name']="Type page name";
+$_SESSION['lg_content']="Content";
+$_SESSION['lg_section_color']="Section color";
+
+$_SESSION['lg_num_columns']="No columns";
+$_SESSION['lg_border']="Border";
+$_SESSION['lg_border_radius']="Border radius";
+$_SESSION['lg_padding']="Padding";
+$_SESSION['lg_upload_picture']="Load image";
+$_SESSION['lg_choose_file_from_disk']="Choose file from disk";
+
 ?>

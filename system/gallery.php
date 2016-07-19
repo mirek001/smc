@@ -39,21 +39,21 @@ $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD']
 <div style="max-width:500px;">
 <div style="text-align:left;">
 <?php 
-$lang_num_columns=lang('num_columns');
-$lang_border=lang('border');
-$lang_border_radius=lang('border_radius');
-$lang_padding=lang('padding');
-$lang_section_color=lang('section_color');
+//$lang_num_columns=$_SESSION['lg_num_columns'];
+//$lang_border=$_SESSION['lg_border'];
+//$lang_border_radius=$_SESSION['lg_border_radius'];
+//$lang_padding=$_SESSION['lg_padding'];
+//$lang_section_color=$_SESSION['lg_section_color'];
 
-change_style ($id, 'num_columns', $edit, $lang_num_columns);
-change_style ($id, 'border', $edit, $lang_border);
-change_style ($id, 'border_radius', $edit, $lang_border_radius);
-change_style ($id, 'padding', $edit, $lang_padding);
-change_section_color ($id, 'section_color', $edit, $lang_section_color);
+change_style ($id, 'num_columns', $edit, $_SESSION['lg_num_columns']);
+change_style ($id, 'border', $edit, $_SESSION['lg_border']);
+change_style ($id, 'border_radius', $edit, $_SESSION['lg_border_radius']);
+change_style ($id, 'padding', $edit, $_SESSION['lg_padding']);
+change_section_color ($id, 'section_color', $edit, $_SESSION['lg_section_color']);
 $section_color=$_SESSION['section_color'];
 
-$lang_upload_picture=lang('upload_picture');
-$lang_choose_file_from_disk=lang('choose_file_from_disk');
+$lang_upload_picture=$_SESSION['lg_upload_picture'];
+$lang_choose_file_from_disk=$_SESSION['lg_choose_file_from_disk'];
 
 ?>
 </div>
@@ -84,7 +84,7 @@ $lang_choose_file_from_disk=lang('choose_file_from_disk');
 <?php ///// co poniżej wyświetla galerie, na samej górze jest wczytywanie z bazy to też należy zostawić w plikach themesa 
 $katalog    = "upload/$id/"; 
 $pliki = scandir($katalog); 
-$lang_delete=lang('delete');
+$lang_delete=$_SESSION['lg_delete'];
 echo $section_color;
 $i=0;
 echo "<div style=\"background-color:$section_color;\"  >";
@@ -125,7 +125,7 @@ echo "</div>";
 function change_style ($id, $type, $edit, $nazwa) {
 $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD'], $_SESSION['DB']);
 $res = $con->query("SELECT * FROM gallery WHERE sm_id= $id");
-$lang_save=lang('save');
+$lang_save=$_SESSION['lg_save'];
 	$row = mysqli_fetch_array($res);
 	$value = $row[$type];
 
@@ -171,7 +171,7 @@ $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD']
 $res = $con->query("SELECT * FROM site_map WHERE id= $id");
 	$row = mysqli_fetch_array($res);
 	$value = $row[$type];
-	$lang_save=lang('save');
+	$lang_save=$_SESSION['lg_save'];
 	//$section_color=$_SESSION['section_color'];
 
 if ($edit==$type) {
@@ -189,7 +189,7 @@ echo<<<END
 END;
 }
 else {
-$select_color_from_adobe=lang('select_color_from_adobe');
+$select_color_from_adobe=$_SESSION['lg_select_color_from_adobe'];
 echo<<<END
 <form class="form-inline" action="system.php" role="form">
   <div class="form-group">

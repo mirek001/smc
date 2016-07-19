@@ -31,23 +31,23 @@ $section_color = $row['section_color'];
 </div>
 
       <div style="width:30%; float:right" class="form-group">
-          <?php echo '<label >'.lang('section_color').': <a href="https://color.adobe.com" target="_blank">'.lang('select_color_from_adobe').'</a></label>'?>
+          <?php echo '<label >'.$_SESSION['lg_section_color'].': <a href="https://color.adobe.com" target="_blank">'.$_SESSION['lg_select_color_from_adobe'].'</a></label>'?>
           <?php echo '<input type="input" name="section_color" class="form-control" placeholder="np.: #336699" value="'.$section_color.'">'; ?>
       </div>
 </div>
 
  		<div class="form-group">
-          <?php echo '<label >'.lang('content').': </label>';?>
-      		<textarea id='edit' name="content" style="margin-top: 30px;"  placeholder="Wpisz coś tutaj!">
+          <?php echo '<label >'.$_SESSION['lg_content'].': </label>';?>
+      		<textarea id='edit' name="content" style="margin-top: 30px;">
         	         <?php echo $page_content; ?>
             </textarea>
       	</div>
       <div style="text-align:center;">
       <?php echo '<input type="hidden" name="id" value="'.$id.'">'; ?>
-      <?php echo '<input type="hidden" name="name" value="'.$page_name.'">'; ?>
-      <?php echo '<input class="btn btn-primary" type="submit" name="update" value="'.lang('update').'">';?>
-      <?php echo '<input class="btn btn-primary" type="submit" name="save" value="'.lang('save_and_quit').'">';?>
-      <?php echo '<a class="btn btn-default" href="system.php" role="button">'.lang('cancel').'</a>';?>
+      <?php echo '<input type="hidden" name="name" value="'.$_SESSION['lg_type_page_name'].'">'; ?>
+      <?php echo '<input class="btn btn-primary" type="submit" name="update" value="'.$_SESSION['lg_update'].'">';?>
+      <?php echo '<input class="btn btn-primary" type="submit" name="save" value="'.$_SESSION['lg_save_and_quit'].'">';?>
+      <?php echo '<a class="btn btn-default" href="system.php" role="button">'.$_SESSION['lg_cancel'].'</a>';?>
       </div>
     </form>
   </div>

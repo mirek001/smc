@@ -16,14 +16,14 @@ $section_color = $row['section_color'];
     <form action="system/core/section_html_edit.php">
     	<div style="overflow: auto;">
     		<div style="width:30%; float:left" class="form-group">
-    			<?php echo '<label >'.lang('type_page_name').': </label>';?>
-    			<?php echo '<input type="input" name="name" class="form-control" placeholder="'.lang('type_page_name').'" value="'.$page_name.'">'; ?>
+    			<?php echo '<label >'.$_SESSION['lg_type_page_name'].': </label>';?>
+    			<?php echo '<input type="input" name="name" class="form-control" placeholder="'.$_SESSION['lg_type_page_name'].'" value="'.$page_name.'">'; ?>
  			</div>
  			<div style="width:40%; float:left" class="form-group">
 
  			</div>
             <div style="width:30%; float:left" class="form-group">
-          <?php echo '<label >'.lang('section_color').': <a href="https://color.adobe.com" target="_blank">'.lang('select_color_from_adobe').'</a></label>'?>
+          <?php echo '<label >'.$_SESSION['lg_section_color'].': <a href="https://color.adobe.com" target="_blank">'.$_SESSION['lg_select_color_from_adobe'].'</a></label>'?>
           <?php echo '<input type="input" name="section_color" class="form-control" placeholder="np.: #336699" value="'.$section_color.'">'; ?>
       </div>
  		</div>
@@ -37,16 +37,16 @@ $section_color = $row['section_color'];
  		</div>
  		<div class="form-group">
 
-          <?php echo '<label >'.lang('content').': </label>';?>
+          <?php echo '<label >'.$_SESSION['lg_content'].': </label>';?>
       		<textarea id='edit' name="content" style="margin-top: 30px; "  placeholder="Type some text!">
         	         <?php echo $page_content; ?>
           </textarea>
       	</div>
       <div style="text-align:center;">
       <?php echo '<input type="hidden" name="id" value="'.$id.'">'; ?>
-      <?php echo '<input class="btn btn-primary" type="submit" name="update" value="'.lang('update').'">';?>
-      <?php echo '<input class="btn btn-primary" type="submit" name="save" value="'.lang('save_and_quit').'">';?>
-      <?php echo '<a class="btn btn-default" href="system.php" role="button">'.lang('cancel').'</a>';?>
+      <?php echo '<input class="btn btn-primary" type="submit" name="update" value="'.$_SESSION['lg_update'].'">';?>
+      <?php echo '<input class="btn btn-primary" type="submit" name="save" value="'.$_SESSION['lg_save_and_quit'].'">';?>
+      <?php echo '<a class="btn btn-default" href="system.php" role="button">'.$_SESSION['lg_cancel'].'</a>';?>
       </div>
     </form>
   </div>
