@@ -62,7 +62,6 @@ $res = $con->query($q=("SELECT * FROM site_map WHERE cat_id=$id ORDER BY positio
                   echo "<div class=\"left10\"></div>";
                   echo "<div class=\"right90\">".show_category($id, $type, $edit)."</div>";
                   echo "</div>";
-
             }
       }
       else if ($type=="page") {
@@ -77,7 +76,6 @@ $res = $con->query($q=("SELECT * FROM site_map WHERE cat_id=$id ORDER BY positio
                   echo "<div class=\"left10\"></div>";
                   echo "<div class=\"right90\">".show_category($id, $type, $edit)."</div>";
                   echo "</div>";
-
             }
       }
             else if ($type=="section") {
@@ -93,7 +91,6 @@ $res = $con->query($q=("SELECT * FROM site_map WHERE cat_id=$id ORDER BY positio
                   echo "<div class=\"left10\"></div>";
                   echo "<div class=\"right90\">".show_category($id, $type, $edit)."</div>";
                   echo "</div>";
-
             }
       }
 
@@ -140,12 +137,16 @@ $row = mysqli_fetch_array($res);
 function dropdown_action_section($id, $name, $section_type){
 
 if ($section_type == "html") {
-      $section_type="glyphicon glyphicon-list";
+      $section_type="glyphicon glyphicon-text-size";
       $edit_link="system.php?page=edit&id=$id";
 }
 if ($section_type == "gallery") {
-      $section_type="glyphicon glyphicon-th";
+      $section_type="glyphicon glyphicon-camera";
       $edit_link="system.php?page=gallery&id=$id";
+}
+if ($section_type == "code") {
+      $section_type="glyphicon glyphicon-console";
+      $edit_link="system.php?page=code&id=$id";
 }
 
 $lang_edit=$_SESSION['lg_edit'];
@@ -207,6 +208,7 @@ $lang_hide=$_SESSION['lg_hide'];
 $lang_show_url=$_SESSION['lg_show_url'];
 $lang_page_url=$_SESSION['lg_page_url'];
 $hide_unhide=unhide_page($id);
+$lang_add_section_code=$_SESSION['lg_add_section_code'];
 $website_address=$_SESSION['website_address'];
 
 return<<<END
@@ -219,6 +221,7 @@ return<<<END
                   <ul class="dropdown-menu">
                   <li><a href="system/core/add_new.php?action=new_section_html&id=$id">$lang_add_section_html</a></li>
                   <li><a href="system/core/add_new.php?action=new_section_gallery&id=$id">$lang_add_section_gallery</a></li>
+                  <li><a href="system/core/add_new.php?action=new_section_code&id=$id">$lang_add_section_code</a></li>
                   </ul>
             </li>
       <li><a href="system.php?edit=$id#section-$id">$lang_rename</a></li>

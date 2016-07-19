@@ -36,6 +36,15 @@ if ($action=="new_section_gallery"){
 	header("Location: ../../system.php#section-$id");
 }
 
+if ($action=="new_section_code"){
+	$page="page";
+	$con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD'], $_SESSION['DB']);
+	$con->query($q=("INSERT INTO site_map (id, name, cat_id, position, type, section_type, hidden, create_time) VALUES (NULL, 'Code Section', '$id', 9999, 'section', 'code', 0, NULL)"));
+
+
+	//echo $q;
+	header("Location: ../../system.php#section-$id");
+}
 
 if ($action=="new_page"){
 	$page="page";

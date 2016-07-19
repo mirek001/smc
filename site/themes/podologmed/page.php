@@ -26,6 +26,7 @@ $res = $con->query("SELECT * FROM site_map WHERE cat_id = $id ORDER BY position"
 	}
 	while ($row = mysqli_fetch_array($res)){
 		$content=$row['content'];
+		$code=$content;
 		$content = html_entity_decode($content);
 		$id=$row['id'];
 		$section_type=$row['section_type'];
@@ -39,6 +40,16 @@ $res = $con->query("SELECT * FROM site_map WHERE cat_id = $id ORDER BY position"
 		}
 		else if ($section_type=="gallery") {
 			show_gallery($id, $section_color);
+		}
+		else if ($section_type=="code") {
+			echo "\n\r";
+			$code=stripslashes($code); 
+			$code='?>'.$code;
+			eval($code);
+
+			//$content=nl2br($code);
+			//$row['content']=stripslashes($row['content']); 
+			
 		}
 	}
 
