@@ -80,4 +80,11 @@ $_SESSION['lg_page_url']="Page URL";
 $_SESSION['lg_website_address']="Website URL (for example: http://sitemapcms.com)";
 
 $_SESSION['lg_add_section_code']="Add Code section";
+
+
+$_SESSION['lg_facebook_address']="Facebook fanpage address";
+$_SESSION['lg_facebook_is_now_disabled']="Facebook slider is now disabled!";
+$_SESSION['lg_facebook_is_now_enabled']="Facebook slider is now enabled!";
+
+
 ?>

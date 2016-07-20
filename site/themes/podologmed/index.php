@@ -20,6 +20,8 @@ else $id=NULL;
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="application-name" content="Site Map CMS">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/musli.css" rel="stylesheet">
+	<script type="text/javascript" src="js/musli.js"></script>
 <?php show_menu_css();?>
     <link rel="stylesheet" href="css/lightbox.css">
 
@@ -91,6 +93,15 @@ $(function() {
   });
 }); 
 </script>
+
+<?php 
+$con = mysqli_connect($_SESSION['HOST'],$_SESSION['LOGIN'],$_SESSION['PASSWD'],$_SESSION['DB']);
+	$res = $con->query($q=("SELECT * FROM settings WHERE name='facebook_address'"));
+	$row = mysqli_fetch_array($res);
+	$facebook_show=$row['int_value'];
+if ($facebook_show=='1') require_once 'facebook.php';
+?>
+
 </body>
 </html>
 

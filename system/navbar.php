@@ -29,6 +29,7 @@
                   <ul class="dropdown-menu">
                   <li><a href="system.php?page=cookie_terms_edit">Cookie</a></li>
                   <li><a href="system.php?page=google_analytics_edit">Google Analytics</a></li>
+                  <li><a href="system.php?page=facebook">Facebook</a></li>
                   </ul>
             </li>
             <li class="dropdown-submenu">

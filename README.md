@@ -1,6 +1,7 @@
 # smc
 
-<br>1.2.310 -- add code section to ops, update in classic
+<br>1.2.400 -- add facebook plugin, security setting update, lang update
+<br>1.2.312 -- add code section to ops, update in classic
 <br>1.2.310 -- emoticons update, add code section, lang update
 <br>1.2.300 -- add show url link, add website address, lang update
 <br>1.2.210 -- hide/unhide page in menu, lang update
