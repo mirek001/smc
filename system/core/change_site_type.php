@@ -16,7 +16,7 @@ $con->query($q=("UPDATE settings SET int_value='$type' WHERE name='site_type'"))
 
 //echo $q;
 
-			$_SESSION['note']=lang(changes_saved)." ! <a href=\"index.php\" target=\"_blank\">(".lang(preview).")</a>";
+			$_SESSION['note']=$_SESSION['lg_changes_saved']." ! <a href=\"index.php\" target=\"_blank\">(".$_SESSION['lg_preview'].")</a>";
 
 			if (isset($_GET['update'])) {$header="../../system.php?page=general_settings";}
 			else $header="../../system.php";

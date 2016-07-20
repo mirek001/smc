@@ -42,10 +42,12 @@ $res = $con->query("SELECT * FROM site_map WHERE cat_id = $id ORDER BY position"
 			show_gallery($id, $section_color);
 		}
 		else if ($section_type=="code") {
+			echo "<div style=\"background-color:$section_color; \"  >";
 			echo "\n\r";
 			$code=stripslashes($code); 
 			$code='?>'.$code;
 			eval($code);
+			echo "</div>";
 
 			//$content=nl2br($code);
 			//$row['content']=stripslashes($row['content']); 

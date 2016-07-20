@@ -50,7 +50,7 @@ $res = $con->query($q=("SELECT * FROM site_map WHERE cat_id=$id  ORDER BY positi
             $id=$row['id'];
             echo "<li><a href=\"#section-$id\">$name</a></li>\n";
         }
-        else return "";
+
 
     }
     echo "</ul>\n";
@@ -119,6 +119,7 @@ $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD']
 $res = $con->query("SELECT * FROM site_map WHERE cat_id = $id ORDER BY position");
 	while ($row = mysqli_fetch_array($res)){
 		$content=$row['content'];
+		$code=$content;
 		$content = html_entity_decode($content);
 		$id=$row['id'];
 		$section_type=$row['section_type'];
@@ -132,6 +133,18 @@ $res = $con->query("SELECT * FROM site_map WHERE cat_id = $id ORDER BY position"
 		}
 		else if ($section_type=="gallery") {
 			show_gallery($id, $section_color);
+		}
+		else if ($section_type=="code") {
+			echo "<div style=\"background-color:$section_color; \"  >";
+			echo "\n\r";
+			$code=stripslashes($code); 
+			$code='?>'.$code;
+			eval($code);
+			echo "</div>";
+
+			//$content=nl2br($code);
+			//$row['content']=stripslashes($row['content']); 
+			
 		}
 	}
 }
