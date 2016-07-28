@@ -86,4 +86,6 @@ $_SESSION['lg_facebook_address']="Adres fanpage na facebooku";
 $_SESSION['lg_facebook_is_now_disabled']="Facebook slider jest wyłączony!";
 $_SESSION['lg_facebook_is_now_enabled']="Facebook slider jest włączony!";
 
+$_SESSION['lg_menu_is_on']="Menu jest włączone";
+$_SESSION['lg_menu_is_off']="Menu jest wyłączone";
 ?>

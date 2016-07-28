@@ -36,6 +36,8 @@ $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD']
 				sleep(3);
 				unlink("$file.zip");
 				unlink("translate.php");
+				include_once 'mysql_update.php';
+				unlink("mysql_update.php");
 				require_once 'check.php';
 				if ($check == $file) {
 					$_SESSION['note']=lang('update_ok_new_ver');

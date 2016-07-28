@@ -5,10 +5,14 @@ $res = $con->query($q=("SELECT *  FROM css WHERE name='menu_css'"));
 $row = mysqli_fetch_array($res);
 $css = $row['css'];
 $id = $row['id'];
+$res = $con->query($q=("SELECT *  FROM settings WHERE name='disabled_menu'"));
+$row = mysqli_fetch_array($res);
+$hidden = $row['int_value'];
 
 ?>
 
 <?php  /// wybór motywu menu
+enable_disable_menu($hidden) ;
 $lang_change_menu_style=$_SESSION['lg_change_menu_style'];
 echo<<<END
 <div class="container">
@@ -63,6 +67,17 @@ echo "<option  value=\"$id\">$name</option>";
 echo "</select>";
 }
 
+function check_selected_cookie_style($no, $position){
+if ($no==$position) return "selected";
+}
+
+function enable_disable_menu($hidden) {
+  if ($hidden=="0"){
+    echo "<a href=\"system/core/enable_disable_menu_bar.php?hidden=1\" class=\"btn btn-success btn\" role=\"button\">".$_SESSION['lg_menu_is_on']."</a>";
+  }
+  else echo "<a href=\"system/core/enable_disable_menu_bar.php?hidden=0\" class=\"btn btn-danger btn\" role=\"button\">".$_SESSION['lg_menu_is_off']."</a>";
+
+}
 ?>
 
 

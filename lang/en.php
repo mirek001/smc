@@ -87,5 +87,6 @@ $_SESSION['lg_facebook_address']="Facebook fanpage address";
 $_SESSION['lg_facebook_is_now_disabled']="Facebook slider is now disabled!";
 $_SESSION['lg_facebook_is_now_enabled']="Facebook slider is now enabled!";
 
-
+$_SESSION['lg_menu_is_on']="Menu is ON";
+$_SESSION['lg_menu_is_off']="Menu is OFF";
 ?>

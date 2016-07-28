@@ -378,7 +378,7 @@ END;
 }
 
 
-function enable_headers($name, $id){   // <<<<<<<<<<<<<<<<jeżeli header albo footer wyłączony pojawia się zielony przycisk włącz
+function enable_headers($name){   // <<<<<<<<<<<<<<<<jeżeli header albo footer wyłączony pojawia się zielony przycisk włącz
 $lang_enable=$_SESSION['lg_enable'];
 $con = mysqli_connect($_SESSION['HOST'],$_SESSION['LOGIN'],$_SESSION['PASSWD'],$_SESSION['DB']);
 $res = $con->query($q=("SELECT *  FROM site_map WHERE type='$name'"));
