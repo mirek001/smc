@@ -46,8 +46,8 @@
 
 
       <ul class="nav navbar-nav navbar-right">
+        <?php include 'license_button.php';?>
         <?php include 'update_button.php';?>
-
         <li><a href="index.php" target="_blank"><?php echo $_SESSION['lg_preview']?></a></li>
         <li><a href="logout.php"><?php echo $_SESSION['lg_logout']?></a></li>
       </ul>

@@ -50,6 +50,7 @@ $_SESSION['lg_site_map']="Site Map";
 $_SESSION['lg_site_type']="Site type";
 $_SESSION['lg_text_on_cookies_bar']="Text on cookies bar";
 $_SESSION['lg_update']="Update";
+$_SESSION['lg_license']="License";
 $_SESSION['lg_updates']="Updates";
 $_SESSION['lg_update_to_version']="Update to version";
 $_SESSION['lg_up_to_date']="Your version is up to date";

@@ -50,6 +50,7 @@ $_SESSION['lg_site_map']="Mapa Strony";
 $_SESSION['lg_site_type']="Typ Strony";
 $_SESSION['lg_text_on_cookies_bar']="Tekst na pasku cookie";
 $_SESSION['lg_update']="Aktualizuj";
+$_SESSION['lg_license']="Licencja";
 $_SESSION['lg_updates']="Aktualizacje";
 $_SESSION['lg_update_to_version']="Aktualizuj do wersji";
 $_SESSION['lg_up_to_date']="Twoja wersja jest aktualna";

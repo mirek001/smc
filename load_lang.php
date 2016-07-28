@@ -1,6 +1,4 @@
 <?php
-session_start();
-if (!isset($_SESSION['id'])) exit();
 $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD'], $_SESSION['DB']);
 		$res = $con->query("SELECT * FROM settings WHERE name = 'lang'");
 		$row = mysqli_fetch_array($res);

@@ -1,4 +1,4 @@
 <?php
-$check='12011';
+$check='12400';
 $check_install='ok';
 ?>
