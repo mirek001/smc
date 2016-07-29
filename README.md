@@ -1,6 +1,6 @@
 # smc
 
-
+<br>1.2.425 -- ssecority settings update, WYSiWYG lang bug fix
 <br>1.2.420 -- ssecurity settings update,
 <br>1.2.410 -- enable/disable menu,
 <br>1.2.400 -- add facebook plugin, security setting update, lang update

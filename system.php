@@ -153,6 +153,7 @@ require_once 'functions.php';
   <script type="text/javascript" src="js/plugins/save.min.js"></script>
   <script type="text/javascript" src="js/plugins/url.min.js"></script>
   <script type="text/javascript" src="js/plugins/video.min.js"></script>
+  <script src='js/languages/pl.js'></script>
 
   <script src="js/lightbox.js"></script>
 
@@ -162,6 +163,7 @@ require_once 'functions.php';
       key: 'yc1VYJZa1c2a1THYBUZY==',
       imageUploadURL: 'upload_image.php',
       imageResizeWithPercent: true,
+      <?php echo 'language: \''.$_SESSION['lang']. '\',';?>
       })
     });
   </script>
