@@ -88,4 +88,7 @@ $_SESSION['lg_facebook_is_now_enabled']="Facebook slider jest włączony!";
 
 $_SESSION['lg_menu_is_on']="Menu jest włączone";
 $_SESSION['lg_menu_is_off']="Menu jest wyłączone";
+
+$_SESSION['lg_update_ok_is_new_ver']="Aktualizacja OK, masz najnowszą wersję.";
+$_SESSION['update_something_wrong']="Coś poszło nie tak";
 ?>

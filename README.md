@@ -1,5 +1,7 @@
 # smc
 
+
+<br>1.2.420 -- ssecurity settings update,
 <br>1.2.410 -- enable/disable menu,
 <br>1.2.400 -- add facebook plugin, security setting update, lang update
 <br>1.2.312 -- add code section to ops, update in classic

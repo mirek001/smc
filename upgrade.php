@@ -35,16 +35,16 @@ $con = mysqli_connect($_SESSION['HOST'], $_SESSION['LOGIN'], $_SESSION['PASSWD']
 				system("unzip -o $file.zip");
 				sleep(3);
 				unlink("$file.zip");
-				unlink("translate.php");
-				include_once 'mysql_update.php';
-				unlink("mysql_update.php");
+				//unlink("translate.php");
+				//include_once 'mysql_update.php';
+				//unlink("mysql_update.php");
 				require_once 'check.php';
 				if ($check == $file) {
-					$_SESSION['note']=lang('update_ok_new_ver');
+					$_SESSION['note']=$_SESSION['lg_update_ok_is_new_ver'];
 					require_once ('last.php');
 					$con->query("UPDATE updates SET name='$new_name', value='$new_ver'");
 				}
-				else $_SESSION['note']=lang('update_something_wrong');
+				else $_SESSION['note']=$_SESSION['update_something_wrong']." (Errno: 766";
 				
 				header("Location: update.php?update=1");
 
